@@ -3,28 +3,39 @@
 // Beispiel Programm zum Bubblesort
 using namespace std;
 
+
+void tausche (int &x, int &y);
+
+
+int arr[] = {5, 2, 8, 4, 1, 7, 9, 3, 0, 3, 11};
+int temp;
+
+
+
 int main() {
 
     bool getauscht = false;
-    int arr[] = {5, 2, 8, 4, 1, 7, 9, 3, 0};
-    int temp;
 
     while(!getauscht){
         getauscht = true;
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < 11; i++) {
             if (arr[i] > arr[i + 1]) {
-                temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
+                tausche(arr[i],arr[i + 1]);
                 getauscht = false;
             }
         }
     }
 
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 11; i++) {
         cout << arr[i];
     }
 
     return 0;
 
+}
+
+void tausche(int &x, int &y){
+    temp = x;
+    x = y;
+    y = temp;
 }
