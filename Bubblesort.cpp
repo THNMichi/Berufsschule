@@ -7,10 +7,10 @@ using namespace std;
 void tausche (int &x, int &y);
 
 
-int arr[] = {5, 2, 8, 4, 1, 7, 9, 3, 0, 3, 11};
+int arr[] = {5, 2, 8, 458, 1, 7, 9, 3, 0, 3, 11};
 int temp;
 
-
+int size = sizeof(arr)/ sizeof(int);
 
 int main() {
 
@@ -18,7 +18,7 @@ int main() {
 
     while(!getauscht){
         getauscht = true;
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < size - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 tausche(arr[i],arr[i + 1]);
                 getauscht = false;
@@ -26,8 +26,8 @@ int main() {
         }
     }
 
-    for (int i = 0; i < 11; i++) {
-        cout << arr[i];
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << ",";
     }
 
     return 0;
